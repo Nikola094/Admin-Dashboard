@@ -1,0 +1,337 @@
+*{
+    --layout-blue-bg: #1992d4;
+    --layout-grey-bg: #e2e8f0;
+    --layout-white-bg: #fcfcfc;
+
+}
+
+html,body{
+    font-family: Roboto;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+h1{
+    font-size: 16px;
+}
+#grid-layout {
+     display: grid;
+  height: 100vh; 
+  grid-template-columns: 300px 1fr; 
+  grid-template-rows: auto 1fr; 
+  grid-template-areas:
+    "dashboard header"
+    "dashboard body";
+}
+#grid-dashboard {
+  background-color: var(--layout-blue-bg);
+  color: #fcfcfc;
+  grid-area: dashboard;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.8rem;
+}
+#grid-dashboard h1 {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+#grid-dashboard .dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.dashboard-buttons button{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--layout-blue-bg);
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    width: 100%;
+    justify-content: start;
+    cursor: pointer;
+}
+.dashboard-buttons button:hover{
+  background-color: #114e6e;
+  
+}
+.gap-button {
+    margin-bottom: 70px;
+}
+button img{
+    filter: brightness(0) invert(1);
+}
+#grid-header {
+  grid-area: header;
+  background-color: var(--layout-white-bg);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  min-height: 60px;
+}
+.header-first-row{
+    display: flex;
+    margin-left: 30px;
+}
+.searchbar-button{
+    border: none;
+    background-color: var(--layout-white-bg);
+    margin-right: 10px;
+    cursor: pointer;
+}
+input{
+    width: 50rem;
+    background-color: var(--layout-grey-bg);
+    border-radius: 20px;
+    border-style: none;
+}
+.notification-bell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 30rem;
+}
+.header-first-row a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-left: 2rem;
+    font-size: large;
+}
+.profile-link{
+    margin-right: 20px;
+    background-color: orange;
+    border-radius: 50px;
+}
+.header-second-row {
+    display: flex;
+    margin-top: 1rem;
+}
+.header-second-row img{
+    margin-top: 1rem;
+    margin-left: 1.8rem;
+    background-color: orange;
+    border-radius: 50px;
+}
+
+.header-second-row p {
+    margin-left: 1rem;
+    width: 150%;
+    font-weight: bold;
+}
+.header-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2.8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.header-buttons button{
+margin: 10px;
+height: 2.5rem;
+width: 7rem;
+background-color: var(--layout-blue-bg);
+color: var(--layout-white-bg);
+border: none;
+border-radius: 22px;
+font-size: 16px;
+font-weight: bold;
+}
+.card-text-above {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  height: 20px;
+}
+.left-para {
+    margin-left:-10px;  
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 3.3rem;  
+}
+.right-para {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 3.3rem; 
+    margin-right: 11rem;
+    position: relative;
+     
+}
+#grid-body {
+  grid-area: body;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--layout-grey-bg);
+  padding: 1rem;
+  overflow: hidden;
+}
+.main-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1.5rem;
+  flex: 2;
+  overflow-y: auto;
+  max-width: 95%;
+  min-height: 95%;
+    margin-left: 0;  
+  margin-right: 1em;
+  margin-bottom: 35px;
+  overflow: hidden;
+}
+#grid-body .main-cards button img{
+ filter: none;
+ cursor: pointer;
+ background-color: var(--layout-white-bg);
+}
+.main-cards .card-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto; 
+    padding: 0 1rem 1rem; 
+    align-self: flex-end;
+}
+.main-cards .card-actions button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.main-cards .card-actions button img {
+    filter: none;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    background: none;
+    border: none;
+    display: block;
+}
+.body-content {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  height: 100%;
+  min-width: 0;
+  align-items: stretch;
+}
+.main-cards > div {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin:0;
+  border-left: 5px solid orange ;
+}
+.main-cards-wrapper {
+     flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+    margin-right: -3em;
+}
+.right-side-cards {
+  flex: 0 1 300px; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 35px;
+  align-self: stretch;
+  min-width: 250px; 
+  max-width: 350px;
+  max-height: 640px;
+}
+.announcement-card,
+.trending-card {
+    flex: 1;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+  overflow: hidden;
+  min-height: 200px;
+
+}
+.main-cards h1{
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+.main-cards h2 {
+    font-size:16px;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-left: 1rem;
+}
+.right-side-cards h3 {
+    font-size: 13px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    
+}
+.right-side-cards h4 {
+    font-size: 13px;
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.announcement-card h4:last-child {
+    border-bottom: none;
+    padding-bottom: 0; 
+    margin-bottom: 0;
+}
+.trending-card a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 5px;
+}
+.trending-info {
+    display: flex;
+    flex-direction: column;
+}
+.trending-card a h5 {
+    display: inline-block;
+    margin: 0; 
+    padding: 0;
+    border: none; 
+    font-weight: normal;
+}
+.trending-card img {
+    border-radius: 50%;
+    background-color: orange; 
+}
+.info-text-trending {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0.5rem; 
+    position: relative;
+ 
+}
